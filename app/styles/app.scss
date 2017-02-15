@@ -12,11 +12,9 @@ $c-yellow: #e5b178;
 
 $m-gutter: 1rem;
 $m-maxwidth: 60rem;
-
 @import 'font-awesome';
 @import 'box-sizing';
 @import 'reset';
-
 
 .section {
   padding: 5rem;
@@ -42,7 +40,6 @@ $m-maxwidth: 60rem;
 }
 
 .shop-card {
-
   &__info {
     color: $c-brand-primary;
     text-align: center;
@@ -82,6 +79,41 @@ $m-maxwidth: 60rem;
   }
 }
 
-.dropdown__list {
-  display: none;
+.dropdown {
+  position: relative;
+
+  &__list {
+    // display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%);
+    border: 2px $c-brand-primary solid;
+    background: $c-brand-white;
+
+    > * + * {
+      border-top: 2px $c-brand-primary solid;
+    }
+  }
+
+  &__button {
+    padding: 0.8rem;
+
+    &--pink {
+      color: $c-pink;
+    }
+
+    &--green {
+      color: $c-green;
+    }
+
+    &--blue {
+      color: $c-blue;
+    }
+
+    &--yellow {
+      color: $c-yellow;
+    }
+  }
 }
