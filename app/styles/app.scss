@@ -3,11 +3,20 @@
 
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 
-$c-borderblue: #0a92b0;
+$c-brand-primary: #3473b5;
+$c-brand-white: #fff;
+$c-pink: #e577aa;
+$c-blue: #72bbe9;
+$c-green: #7abe93;
+$c-yellow: #e5b178;
 
-// @import 'font-awesome';
+$m-gutter: 1rem;
+$m-maxwidth: 60rem;
+
+@import 'font-awesome';
 @import 'box-sizing';
 @import 'reset';
+
 
 .section {
   padding: 5rem;
@@ -25,17 +34,17 @@ $c-borderblue: #0a92b0;
 }
 
 .grid__item {
-  flex-basis: calc(100%/3 - 1rem - 1rem);
+  flex-basis: calc(100%/3 - 2rem);
   flex-grow: 1;
-  margin: 1rem;
+  margin: $m-gutter;
   padding: 0.5rem;
-  border: 2px solid $c-borderblue;
+  border: 2px solid $c-brand-primary;
 }
 
 .shop-card {
 
   &__info {
-    color: $c-borderblue;
+    color: $c-brand-primary;
     text-align: center;
   }
 
@@ -49,15 +58,28 @@ $c-borderblue: #0a92b0;
 
   &__options {
     margin: 0 -0.5rem -0.5rem;
-    padding: 0.5rem 0;
-    border-top: 2px solid $c-borderblue;
+    border-top: 2px solid $c-brand-primary;
   }
 }
 
 .button-bar {
   display: flex;
-  align-items: center;
   justify-content: space-around;
+
+  &__button {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    padding: 0.5rem;
+    border: 0;
+    background: none;
+    color: $c-brand-primary;
+    font-size: 1rem;
+  }
+
+  > * + * {
+    border-left: 2px $c-brand-primary solid;
+  }
 }
 
 .dropdown__list {
