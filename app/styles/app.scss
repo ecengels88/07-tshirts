@@ -29,10 +29,11 @@ $m-maxwidth: 60rem;
     align-items: center;
 
     &__pic {
-      padding: 1rem 0.5rem;
+      padding: 0.5rem;
     }
 
     &__info {
+      margin-left: -2rem;
       padding: 1rem;
     }
 
@@ -58,18 +59,17 @@ $m-maxwidth: 60rem;
     .dropdown {
       position: relative;
 
-      &:hover {
-        .dropdown__list {
-          display: flex;
-          flex-direction: row;
-          transform: translate(-50%);
-        }
-      }
-
       &__list {
-        display: none;
-        position: absolute;
+        bottom: 50%;
+        right: 100%;
+        left: auto;
+        flex-direction: row;
+        transform: translate(0, 50%);
 
+        > * + * {
+          border-top: none;
+          border-left: 2px $c-brand-primary solid;
+        }
       }
     }
   }
@@ -141,7 +141,7 @@ $m-maxwidth: 60rem;
     color: $c-brand-white;
 
     .dropdown__list {
-      display: block;
+      display: flex;
       color: $c-brand-primary;
     }
   }
@@ -151,6 +151,7 @@ $m-maxwidth: 60rem;
     position: absolute;
     bottom: 100%;
     left: 50%;
+    flex-direction: column;
     margin: 0;
     transform: translate(-50%);
     border: 2px $c-brand-primary solid;
